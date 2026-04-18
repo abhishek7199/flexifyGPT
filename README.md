@@ -1,0 +1,11 @@
+#features
+- Login/Signup
+  - Sign In /Sign up Form 
+  - Redirect to Browse page
+- Browse(after authentication)
+  - Header
+  - Main movie
+    - Trailer in background
+    - Title and Description
+    - Movie Suggestion
+      - MovieList * N

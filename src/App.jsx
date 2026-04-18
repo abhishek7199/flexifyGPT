@@ -1,5 +1,7 @@
+import Body from "./components/Body";
+
 function App() {
-  return <h1 className="">Namaste React js project</h1>;
+  return <Body />;
 }
 
 export default App;
