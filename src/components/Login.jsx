@@ -3,7 +3,12 @@ import Header from "./Header";
 import "./Login.css";
 
 const Login = () => {
-  const [toggleSinUp, setToggleSignUp] = useState(true);
+  const [handleLogin, setHandleLogin] = useState(true);
+
+  const toggleSignInform = () => {
+    setHandleLogin(!handleLogin);
+  };
+
   return (
     <div className="relative min-h-screen w-full bg-black">
       <Header />
@@ -19,7 +24,19 @@ const Login = () => {
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
         <form className="w-full max-w-md bg-black/80 p-8 rounded-lg shadow-2xl text-white form">
           {/* Title */}
-          <h2 className="text-3xl font-bold mb-6">Sign In</h2>
+          <h2 className="text-3xl font-bold mb-6">
+            {handleLogin ? "Sign In" : "Sign Up"}
+          </h2>
+
+          {!handleLogin && (
+            <input
+              type="text"
+              name="full-name"
+              id="full-name"
+              placeholder="Full Name"
+              className="w-full p-3 mb-4 rounded bg-gray-800 border border-gray-700 focus:outline-none  focus:border-red-600"
+            />
+          )}
 
           {/* Email */}
           <input
@@ -34,13 +51,13 @@ const Login = () => {
             placeholder="Password"
             className="w-full p-3 mb-5 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-red-600"
           />
-          
+
           {/* Button */}
           <button
             type="submit"
             className="w-full bg-red-600 hover:bg-red-700 transition py-3 rounded font-semibold"
           >
-            Sign In
+            {handleLogin ? "Sign In" : "Sign Up"}
           </button>
 
           {/* Bottom Section */}
@@ -50,8 +67,13 @@ const Login = () => {
               Remember me
             </label> */}
 
-            <span className="cursor-pointer hover:text-white new-account">
-              Create New account
+            <span
+              onClick={toggleSignInform}
+              className="cursor-pointer hover:text-white new-account cursor-pointer"
+            >
+              {handleLogin
+                ? "New to Netflix? Sign Up Now"
+                : "Already Registered? Sign In"}
             </span>
           </div>
         </form>
