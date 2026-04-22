@@ -1,7 +1,8 @@
-src/utils/Firebase
+flexify-gpt/src/utils/Firebase
 Firebase
 utils/Firebase
 
+../src./utils/Firebase.js
 # Logs
 logs
 *.log
