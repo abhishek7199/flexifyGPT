@@ -26,6 +26,7 @@ const Login = () => {
     if (!handleLogin) {
       //Sign up Logic
 
+      //This is the API createUserWithEmailAndPassword
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
